@@ -1,0 +1,33 @@
+{
+  "name": "chatsupport",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "migrate": "sequelize db:migrate"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.0",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^5.16.6",
+    "@react-three/drei": "^9.109.5",
+    "@react-three/fiber": "^8.16.8",
+    "@react-three/postprocessing": "^2.16.2",
+    "@types/three": "^0.167.1",
+    "firebase": "^10.12.5",
+    "framer-motion": "^11.3.23",
+    "next": "14.2.5",
+    "openai": "^4.55.1",
+    "postprocessing": "^6.36.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "three": "^0.167.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
+  }
+}
