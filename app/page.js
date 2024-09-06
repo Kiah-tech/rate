@@ -7,7 +7,7 @@ export default function Home() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: "Hi! I'm the Kiah-tech support assistant. How can I help you today?",
+      content: "Hi! to rate my professor. How can I help you today?",
     },
   ]);
   const [message, setMessage] = useState('');
@@ -73,30 +73,24 @@ export default function Home() {
 
   return (
     <Box
-      width="100vw"
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      bgcolor="black"
-      sx={{
-        position: 'relative',
-        overflow: 'hidden',
-        '::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'radial-gradient(circle, rgba(255,255,255,0.1) 1%, rgba(255,255,255,0) 100%)',
-          backgroundSize: '10px 10px',
-          opacity: 0.6,
-          animation: 'sparkles 2s infinite linear',
-        },
-      }}
-    >
+    width="100vw"
+    height="100vh"
+    display="flex"
+    flexDirection="column"
+    justifyContent="center"
+    alignItems="center"
+    sx={{
+      position: 'relative',
+      overflow: 'hidden',
+      backgroundImage: 'url("/Cute Hand Drawn Style Mathematics Education Pink Background, Rubber, Blank Paper, Pencil Background Image And Wallpaper for Free Download.jpeg")',  // Correct path from public folder
+      backgroundSize: 'contain',  // Ensures the image maintains its aspect ratio and fits within the box
+      backgroundPosition: 'center',  // Centers the image in the box
+      backgroundRepeat: 'no-repeat',
+    }}
+  >  
+
+    {/* Rest of your code remains the same */}
+  
       <style>
         {`
           @keyframes sparkles {
@@ -107,45 +101,49 @@ export default function Home() {
       </style>
 
       <Box mb={4}>
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <Typography 
-            variant="h4" 
-            component="h1" 
-            align="center" 
-            sx={{
-              background: 'linear-gradient(to right, #4a00e0, #8e2de2, #d53369, #cbad6f)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-            >
-            Welcome to Kiah-Tech AI <br/> Your 24/7 Emotional Support Companion
-          </Typography>
-        </motion.div>
-      </Box>
+  <motion.div
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+    <Typography 
+      variant="h4" 
+      component="h1" 
+      align="center" 
+      sx={{
+        background: 'linear-gradient(to right, #ff6699, #cc0066)',  // Pink gradient
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      }}
+    >
+      Welcome to rate my professor AI
+    </Typography>
+  </motion.div>
+</Box>
+
 
       <Button 
-        variant="contained" 
-        onClick={() => setOpen(!open)} 
-        style={{
-          marginBottom: 16,
-          background: 'linear-gradient(to right, #000428, #004e92, #6a0dad)', 
-          color: '#fff', 
-          padding: '10px 20px',
-          borderRadius: '12px',
-          boxShadow: '0 0 10px rgba(255, 255, 255, 0.7)', 
-          transition: 'background 0.3s, box-shadow 0.3s',
-          '&:hover': {
-            background: 'linear-gradient(to right, #6a0dad, #004e92, #000428)', 
-            boxShadow: '0 0 20px rgba(255, 255, 255, 1)', 
-          }
-        }}
-      >
-        {open ? 'Hide Support' : 'Kiah-Tech'}
-      </Button>
+  variant="contained" 
+  onClick={() => setOpen(!open)} 
+  style={{
+    marginBottom: 16,
+    background: 'linear-gradient(to right, #ff6699, #cc0066)',  // Pink gradient
+    color: '#fff', 
+    padding: '10px 20px',
+    borderRadius: '12px',
+    boxShadow: '0 0 10px rgba(255, 255, 255, 0.7)', 
+    transition: 'background 0.3s, box-shadow 0.3s',
+    '&:hover': {
+      background: 'linear-gradient(to right, #cc0066, #ff6699)',  // Reverse gradient on hover
+      boxShadow: '0 0 20px rgba(255, 255, 255, 1)', 
+    }
+  }}
+>
+  {open ? 'Hide Support' : 'rate my professor'}
+</Button>
+
+
+
 
       <Collapse in={open}>
         <Stack
@@ -155,8 +153,8 @@ export default function Home() {
           border="1px solid black"
           p={2}
           spacing={3}
-          bgcolor="#ADD8E6" 
-          boxShadow="0 0 15px rgba(0, 150, 255, 0.75)" 
+          bgcolor="#f5ecdc" 
+          boxShadow="#f5ecdc" 
           borderRadius={2} 
         >
           <Stack
@@ -174,18 +172,19 @@ export default function Home() {
                   message.role === 'assistant' ? 'flex-start' : 'flex-end'
                 }
               >
-                <Box
-                  bgcolor={
-                    message.role === 'assistant'
-                      ? 'primary.main'
-                      : 'secondary.main'
-                  }
-                  color="white"
-                  borderRadius={16}
-                  p={3}
-                >
-                  {message.content}
-                </Box>
+               <Box
+                bgcolor={
+                  message.role === 'assistant'
+                    ? '#ffb3c6' // Lighter pink color
+                    : '#ff99aa' // Another shade of light pink for secondary
+                }
+                color="white"
+                borderRadius={16}
+                p={3}
+              >
+                {message.content}
+              </Box>
+
               </Box>
             ))}
             {/* Add a div to serve as a reference for scrolling */}
@@ -204,14 +203,14 @@ export default function Home() {
               onClick={sendMessage}
               style={{
                 marginBottom: 16,
-                background: 'linear-gradient(to right, #000428, #004e92, #6a0dad)', 
+                background: 'linear-gradient(to right, #ff6699, #cc0066)',  // Pink gradient
                 color: '#fff', 
                 padding: '10px 20px',
                 borderRadius: '12px',
                 boxShadow: '0 0 10px rgba(255, 255, 255, 0.7)', 
                 transition: 'background 0.3s, box-shadow 0.3s',
                 '&:hover': {
-                  background: 'linear-gradient(to right, #6a0dad, #004e92, #000428)',
+                  background: 'linear-gradient(to right, #cc0066, #ff6699)',  // Reverse gradient on hover
                   boxShadow: '0 0 20px rgba(255, 255, 255, 1)', 
                 }
               }}
@@ -224,6 +223,8 @@ export default function Home() {
     </Box>
   );
 }
+
+
 
 
 
